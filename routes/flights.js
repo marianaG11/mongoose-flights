@@ -4,7 +4,7 @@ const flightsCtrl = require('../controllers/flights');
 
 /* GET users listing. */
 
-router.get('/', flightsCtrl.index);
+router.get('/', flightsCtrl.index); // '/' means home page = index = localhost3000/flights
 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');

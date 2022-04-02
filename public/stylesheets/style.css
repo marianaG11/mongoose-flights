@@ -1,8 +1,29 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: wheat;
 }
 
+nav > a {
+  color: black;
+  margin: 12px;
+}
+
+body > nav {
+display: flex;
+grid-area: nav;
+justify-content: center;
+background-color: antiquewhite;
+}
+
+/* tr > th {
+  margin: 10px;
+}
+main > table {
+  justify-content: center;
+} */
+
 a {
-  color: #00B7FF;
+  color: black;
+  margin: 12px;
 }

@@ -25,15 +25,9 @@ const flightSchema = new Schema({
         min: 10,
         max:9999
     }, 
-    departs: Date
-    // departs: {
-    //     type: Date,
-    //     default: function(){
-    //         let today = new Date();
-    //         let nextYear = today.setFullYear(today.getFullYear()+1);
-    //         return nextYear
-    // }
-
+    departs: {
+        type: Date
+    }
 })
 
 // Compile the schema into a model and export it

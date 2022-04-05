@@ -6,9 +6,9 @@ const flightsCtrl = require('../controllers/flights');
 
 router.get('/', flightsCtrl.index); // '/' means home page = index = localhost3000/flights
 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 
 // GET /flights/new
@@ -19,5 +19,7 @@ router.get('/:id', flightsCtrl.show);
 //post /flights
 router.post('/', flightsCtrl.create);
 
+// //
+// router.get('/:id/tickets/new', flightsCtrl.addTicket)
 
 module.exports = router;

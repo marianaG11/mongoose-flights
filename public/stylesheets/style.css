@@ -16,12 +16,12 @@ justify-content: center;
 background-color: antiquewhite;
 }
 
-/* tr > th {
-  margin: 10px;
+td, th, table {
+  padding: 10px;
 }
 main > table {
   justify-content: center;
-} */
+}
 
 a {
   color: black;

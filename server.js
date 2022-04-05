@@ -9,6 +9,7 @@ require('./config/database');
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 const destinationsRouter = require('./routes/destinations');
+const ticketsRouter = require('./routes/tickets');
 var app = express();
 
 // view engine setup
@@ -22,10 +23,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/flights', flightsRouter);
+
 app.use('/', destinationsRouter);  //when mounting routers for nested resources we need more flexibility in our paths, so we are going to mount to the root (/) path
 app.use('/', indexRouter);
-
+app.use('/', ticketsRouter);
+app.use('/flights', flightsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
-	
+
 const destinationSchema = new Schema({
     airport: {
         type: String, 
@@ -9,14 +9,13 @@ const destinationSchema = new Schema({
     }, 
     arrival: {
     type: Date,
+    // timestamps: true,
     default: function(){
         return new Date(new Date().setFullYear(new Date().getFullYear()+1))
-        //time shows up one year from today, so function works here but not when trying to make a new flight
+    //     //time shows up one year from today, so function works here but not when trying to make a new flight
+     }
     }
-}   
 });
-
-
 
 
 const flightSchema = new Schema({

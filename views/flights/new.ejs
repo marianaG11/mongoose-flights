@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
-    <h2>Enter a New Flight</h2>
-<form action="/flights" method="POST">
+<form action="/flights" class ="new-flight " method="POST"> 
+  <!-- the form is the UI -->
   <label>Airline:
     <input type="text" name="airline">
   </label><br>
@@ -19,10 +19,7 @@
   </label><br>
   <label for = "departs-time">Choose Departure Date and Time:</label>
     <input type="datetime-local" id="depart" name="departs" 
-    value="2022-04-01T00:00">
-  <!-- <label>Departs:
-    <input type="text" name="departs">
-  </label><br> -->
+    value='<%=departsDate%>'>
   <input type="submit" value="Add Flight">
 </form>
 </body>

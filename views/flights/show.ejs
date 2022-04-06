@@ -22,7 +22,7 @@
         <tr>
           <td><%= t.seat %></td>
           <td><%= t.price%></td>
-          <td><form action="/tickets/<%=t._id%>?_method=DELETE"
+          <td><form action="/flights/<%=flight._id %>/tickets/<%=t._id%>?_method=DELETE"
             class='delete-ticket' method="POST">
             <button type='submit'>Delete Ticket</button></form></td>
         </tr>
@@ -47,7 +47,7 @@
         <option value="SAN">SAN</option>
     </select>
     <label for = "destination-time">Choose Destination Date and Time:</label>
-    <input type="datetime-local" id="destination" name="destinations">
+    <input type="datetime-local" id="destination" name="arrival">
   <input type="submit" value="Add Destination">
 </form>
 <% if (flight.destinations.length) { %>

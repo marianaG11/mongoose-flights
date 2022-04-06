@@ -14,3 +14,5 @@ const ticketSchema = new Schema({
 
 })
 module.exports = mongoose.model('Ticket', ticketSchema);
+
+//mongodb adds a object id (_id to each document in the ticket schema collection)

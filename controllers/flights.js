@@ -35,8 +35,13 @@ function newFlight(req, res){
 
 function create(req, res) {
     console.log(req.body)
+    if (!req.body.departs){
+        req.body.departs = undefined; //this is bc mongoose only applies a default if the value of 
+        //the path is undefined 
+    }
     const flight = new Flight(req.body);
     console.log(flight)
+
     flight.save(function(err){
         console.log(err)
         if (err) return res.render('flights/new');

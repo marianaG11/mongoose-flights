@@ -34,7 +34,9 @@ function newTicket(req, res){
 
 
 function deleteTicket (req, res) {
-    console.log(req.params.id, 'req.params.id, delete controller');
-    Ticket.deleteOne(req.params.id);
-    // res.redirect(`/flights/${req.params.id}`) //want to stay on the same page - no need for redirect
+    console.log(req.params.ticketId, 'req.params.id, delete controller');
+    if (!req.params.ticketId) return;
+    Ticket.findByIdAndDelete(req.params.ticketId, function(err, deletedTicket){
+        res.redirect(`/flights/${req.params.flightId}`)
+    });
 }

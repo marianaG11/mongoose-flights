@@ -9,6 +9,10 @@ module.exports = {
 //push in an object that's compatible with the embedded document's schema, 
 //call save on the parent doc, and redirect to wherever makes sense for the app.
 function create(req, res){
+    // console.log('testing')
+    // console.log(req.body)
+    req.body.destinations = new Date(req.body.destinations) //converting to a date 
+    console.log(req.body)
     Flight.findById(req.params.id, function(err, flight){
         flight.destinations.push(req.body);
         flight.save(function(err){

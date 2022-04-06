@@ -9,11 +9,8 @@ const destinationSchema = new Schema({
     }, 
     arrival: {
     type: Date,
-    // timestamps: true,
-    default: function(){
-        return new Date(new Date().setFullYear(new Date().getFullYear()+1))
-    //     //time shows up one year from today, so function works here but not when trying to make a new flight
-     }
+    //removed default function here
+    //in the show.ejs, include: name="arrival" in input to match
     }
 });
 
@@ -26,7 +23,6 @@ const flightSchema = new Schema({
     airport: {
         type: String,
         enum: ['AUS', 'DEN', 'DFW', 'ATL', 'LAX', 'SAN']
-        // default: 'DEN' //not working
     },
     flightNumber: {
         type: Number,
@@ -38,7 +34,6 @@ const flightSchema = new Schema({
         type: Date,
         default: function(){
             return new Date(new Date().setFullYear(new Date().getFullYear()+1))
-            //not showing as next year for default
         }
     },
     destinations: [destinationSchema]

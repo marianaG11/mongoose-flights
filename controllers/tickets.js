@@ -5,7 +5,8 @@ const Ticket = require('../models/ticket');
 
 module.exports = {
     new: newTicket,
-    create
+    create,
+    delete: deleteTicket
 }
 
 
@@ -29,4 +30,11 @@ function newTicket(req, res){
             //action= '/flights/<%=flightId%>/tickets' matches router.post('/flights/:id/tickets'
         })
     })
+}
+
+
+function deleteTicket (req, res) {
+    console.log(req.params.id, 'req.params.id, delete controller');
+    Ticket.deleteOne(req.params.id);
+    // res.redirect(`/flights/${req.params.id}`) //want to stay on the same page - no need for redirect
 }

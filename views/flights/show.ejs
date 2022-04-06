@@ -8,7 +8,7 @@
 </section>
 
 
-<h3><a class="'button" href ='/flights/<%=flight._id%>/tickets/new'>Add Ticket</a></h3>
+<h3><a class="button" href ='/flights/<%=flight._id%>/tickets/new'>Add Ticket</a></h3>
 <section>
   <table>
     <thead>
@@ -22,6 +22,9 @@
         <tr>
           <td><%= t.seat %></td>
           <td><%= t.price%></td>
+          <td><form action="/tickets/<%=t._id%>?_method=DELETE"
+            class='delete-ticket' method="POST">
+            <button type='submit'>Delete Ticket</button></form></td>
         </tr>
       <% }); %>
     </tbody>
